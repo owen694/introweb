@@ -1,0 +1,9 @@
+<center>
+"A woman`s advice is no {Adj0} thing, but he who won`t {V0} it is a fool."<br />
+
+"Absence makes the {Bp} grow {Adj1}-er."<br />
+
+"A/An {Food} never {Text} far from the {N0}."<br />
+
+"Anyone can hold the {N1} when the sea is {Adj2}."<br />
+</center>

@@ -1,0 +1,5 @@
+The <u>{Col}</u> Dragon is the {Super} Dragon of all.<br />
+It has <u>{Adj0}</u> <u>{Plbp}</u>, and a <u>{Bp}</u> shaped like a <u>{N0}</u>.<br />
+It loves to eat <u>{Pla}</u>, although it will feast on nearly anything.<br />
+It is <u>{Adj1}</u> and <u>{Adj2}</u>.<br />
+You must be <u>{Adj3}</u> around it, or you may end up as it`s meal!<br />

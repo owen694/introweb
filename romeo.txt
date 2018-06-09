@@ -1,0 +1,14 @@
+Two <u>{Pln0}</u>, both alike in dignity,<br />
+In fair to <u>{Place}</u>, where we lay our scene,<br />
+From ancient <u>{N0}</u> break to new mutiny,<br />
+Where civil blood makes civil hands unclean.<br />
+From forth the fatal loins of these two foes<br />
+A pair of star-cross`d <u>{Pln1}</u> take their life;<br />
+Whole misadventured piteous overthrows<br />
+Do with their <u>{N1}</u> bury their parents` strife.<br />
+The fearful passage of their <u>{Adj0}</u> love,<br />
+And the continuance of their parents` rage,<br />
+Which, but their children`s end, nought could <u>{V0}</u>,<br />
+Is now the <u>{Num}</u> hours` traffic of our stage;<br />
+The which if you with <u>{Adj1}</u>  <u>{Bp}</u> attend,<br />
+What here shall <u>{V1}</u>, our toil shall strive to mend.	<br />'
