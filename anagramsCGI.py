@@ -12,7 +12,7 @@ def htmlTop():
           <html lang="en-US">
                 <head>
                         <meta charset="utf-8" />
-                        <title> Process Name </title>
+                        <title> Anagrams and Permutations </title>
                         <link rel="stylesheet" href="style.css">
                 </head>
                 <body>
@@ -75,12 +75,15 @@ def findAnagrams():
 
 def main():
     htmlTop()
-    print ' <div id="yeet" style="height: 500px; line-height: 30px;"> <center>'
-    makePermutations()
-    findAnagrams()
-    print '<br> <center> <h1> Anagrams: </h1> </center>'
+    print ' <div id="yeet" style="line-height: 30px;"> <center>'
+    Permuations = makePermutations()
+    Anagrams=list(set(findAnagrams()))
+    print '<center> <h3> Permutations: </h3> </center>'
+    for x in Permutations:
+        print '<center> ', x, '</center>'
+    print '<center> <h3> Anagrams: </h3> </center>'
     for x in Anagrams:
-        print '<center>  <br>', x, '</center>'
+        print '<center>', x, '</center>'
     print '</div> </div> </center>'
     htmlTail()
 

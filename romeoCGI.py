@@ -12,7 +12,7 @@ def htmlTop():
           <html lang="en-US">
                 <head>
                         <meta charset="utf-8" />
-                        <title> Process Name </title>
+                        <title> Romeo and Juliet MadLib</title>
                         <link rel="stylesheet" href="style.css">
                 </head>
                 <body>

@@ -11,7 +11,7 @@ def htmlTop():
           <html lang="en-US">
                 <head>
                         <meta charset="utf-8" />
-                        <title> Process Name </title>
+                        <title>Magic 8 Ball</title>
                         <link rel="stylesheet" href="style.css">
                 </head>
                 <body>
@@ -54,11 +54,10 @@ def main():
     a = random.choice(L)
     print '''<div id="yeet" style="height: 510px;">
                 <center><p> <span style="font-weight:900; font-size:30px;">Magic 8 Ball</span></p>'''
-    print ' <center><img src="https://www.horoscope.com/images-US/games/game-magic-8-ball-no-text.png"><br/></center>'
-    print '<center><p>' + a + '</p></center>'
+    print ' <center><a href="http://lisa.stuy.edu/~ali02/projects/magic8ballCGI.py"><img class="oof" src="https://www.horoscope.com/images-US/games/game-magic-8-ball-no-text.png"></a><br/></center>'
+    print '<center><p><h3>' + a + '</h3></p></center>'
     print '<center><a href=../index.html>Back to the Home Page</a><br></center>'
     print '<p>                         </p>'
-    print '<center><button type="submit" class="button" style="font-size:15px;"onClick="window.location.reload()">Try Again</button><br></center>'
     print '</div> </div> </center>'
     htmlTail()
 

@@ -20,7 +20,7 @@ def htmlTop():
           <html lang="en-US">
                 <head>
                         <meta charset="utf-8" />
-                        <title> Process Name </title>
+                        <title> Periodic Table </title>
                         <link rel="stylesheet" href="style.css">
                 </head>
                 <body>
@@ -101,7 +101,6 @@ def mean(nums):
     return sum(nums, 0.0) / len(nums)
 
 
-
 def sortnum():
     nam = sorted(names())
     dictn = numdict()
@@ -143,7 +142,8 @@ def numdict():
     return a
 
 def things():
-    print '''<table style="width:70%; border: 1px solid #3a807f;''">
+    print '''<h3> General Info</h3>
+            <table style="width:70%; border: 1px solid #3a807f;''">
               <tr>
                 <th># of Metals</th>
                 <th># of Gases at STP</th>
@@ -164,7 +164,8 @@ def stats():
     a = max(masses)
     b = min(masses)
     c = mean(masses)
-    print '''<table style="width:70%; border: 1px solid #3a807f;''">
+    print '''<h3>Atomic Mass Info</h3>
+            <table style="width:70%; border: 1px solid #3a807f;''">
               <tr>
                 <th>Max Mass</th>
                 <th>Min Mass</th>
@@ -179,7 +180,7 @@ def stats():
               </tr><br />
               '''.format(maxm= a, minm=b, avgm= c, lower=b, upper=a)
 
-    print '</table><p>          </p><br/></div> </div> </center>'
+    print '</table><br />'
 
 def getSortType():
     formData = cgi.FieldStorage()
@@ -188,16 +189,34 @@ def getSortType():
 
 def selector():
     print '''<form method = "post" action = "PeriodicTableCGI.py">
-                <span style="font-weight:900; ">Sort Type</span>:
+                <span style="font-weight:900; ">Select Type of Data</span>:
                 <select name = "sorttype">
-                    <option value="0">Atomic Number</option>
-                    <option value="1">Alphabetic</option>
+                    <option value="0">Atomic Number (All)</option>
+                    <option value="1">Alphabetic (All)</option>
+                    <option value="2">Halogens (By Atomic Number)</option>
+                    <option value="3">Alkali Metals (By Atomic Number)</option>
+                    <option value="4">Halogens (Alphabetic)</option>
+                    <option value="5">Alkali Metals (Alphabetic)</option>
                 </select></br>
                 <input type="submit" class="button" name="submit word" value="Submit" /><br />
                 <p>    </p>
             </form>'''
     printTable()
 
+def printTable():
+    yeet = getSortType()
+    if yeet == '0':
+        atom()
+    if yeet == '1':
+        alph()
+    if yeet == '2':
+        printHalogens(False)
+    if yeet == '3':
+        printAlkali(False)
+    if yeet == '4':
+        printHalogens(True)
+    if yeet == '5':
+        printAlkali(True)
 def format(a,b,c,d):
     x = []
     nam = a
@@ -208,6 +227,52 @@ def format(a,b,c,d):
          z = y.format(Name= nam[i], AtomicNumber= num[i], Symbol= sym[i], AtomicMass= masses[i])
          x.append(z)
     return x
+
+
+
+def printHalogens(g):
+    f = []
+    num = numdict()
+    mass = massdict()
+    symbols = symdict()
+
+    if g==True:
+        halogens=sorted(['Fluorine','Chlorine','Bromine','Iodine','Astatine'])
+    else:
+        halogens=['Fluorine','Chlorine','Bromine','Iodine','Astatine']
+    for x in halogens:
+        z = y.format(Name=x, AtomicNumber= num[x], Symbol= symbols[x], AtomicMass= mass[x])
+        f.append(z)
+    print '''<table style="width:70%; border: 1px solid #3a807f;''">
+              <tr>
+                <th>Name</th>
+                <th>Atomic Number</th>
+                <th>Symbol</th>
+                <th>Atomic Mass</th>
+              </tr>'''
+    for i in range(0,len(f)):
+        print f[i]
+
+def printAlkali(g):
+    f = []
+    num = numdict()
+    mass = massdict()
+    symbols = symdict()
+    alkali=['Lithium','Sodium','Potassium','Rubidium','Cesium','Francium']
+    if g:
+        alkali=sorted(alkali)
+    for x in alkali:
+        z = y.format(Name=x, AtomicNumber= num[x], Symbol= symbols[x], AtomicMass= mass[x])
+        f.append(z)
+    print '''<table style="width:70%; border: 1px solid #3a807f;''">
+              <tr>
+                <th>Name</th>
+                <th>Atomic Number</th>
+                <th>Symbol</th>
+                <th>Atomic Mass</th>
+              </tr>'''
+    for i in range(0,len(f)):
+        print f[i]
 
 def atom():
     x=format(names(),atomnum(),symbol(),mass())
@@ -233,12 +298,7 @@ def alph():
     for i in range(0,len(x)):
         print x[i]
 
-def printTable():
-    yeet = getSortType()
-    if yeet == '0':
-        atom()
-    if yeet == '1':
-        alph()
+
 
 
 
@@ -248,11 +308,13 @@ def main():
     print ' <div id="yeet" style="height: 694px; line-height: 30px;"> <center><p> <span style="font-weight:900; font-size:30px;">Periodic Table of Elements</span></p>'
     print '<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Periodic_table_vectorial.png" width=60%>'
     things()
+    stats()
     selector()
     print '</table>'
     print '<p> </p>'
     print '<p> </p>'
-    stats()
+    print '<p>          </p><br/></div> </div> </center>'
+
 
     htmlTail()
 
