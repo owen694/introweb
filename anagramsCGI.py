@@ -20,7 +20,7 @@ def htmlTop():
 
                     <ul>
                 	<div class="table">
-
+                          <li><a href="http://lisa.stuy.edu/~ali02">Home Page</a></li>
                 		  <li><a href="http://lisa.stuy.edu/~ali02/projects/magic8ballCGI.py">Magic 8 Ball</a></li>
                 		  <li><a href="http://lisa.stuy.edu/~ali02/projects/getWord.html">Anagrams</a></li>
                 		  <li class="dropdown">
@@ -76,15 +76,15 @@ def findAnagrams():
 def main():
     htmlTop()
     print ' <div id="yeet" style="line-height: 30px;"> <center>'
-    Permuations = makePermutations()
+    boop = ', '.join(makePermutations())
     Anagrams=list(set(findAnagrams()))
     print '<center> <h3> Permutations: </h3> </center>'
-    for x in Permutations:
-        print '<center> ', x, '</center>'
+    print "<p style='width:70%;'>{}</p>".format(boop)
     print '<center> <h3> Anagrams: </h3> </center>'
     for x in Anagrams:
         print '<center>', x, '</center>'
     print '</div> </div> </center>'
+    
     htmlTail()
 
 if __name__ == "__main__":

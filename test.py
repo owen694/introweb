@@ -1,17 +1,36 @@
 halogens=['Fluorine','Chlorine','Bromine','Iodine','Astatine']
 alkali=['Lithium','Sodium','Potassium','Rubidium','Caesium','Francium']
 
-def main(g):
+def printAlkali(g):
     f = []
     num = numdict()
     mass = massdict()
     symbols = symdict()
-
-    if g==True:
-        halogens=sorted(['Fluorine','Chlorine','Bromine','Iodine','Astatine'])
-    else:
-        halogens=['Fluorine','Chlorine','Bromine','Iodine','Astatine']
-    for x in halogens:
+    alkali=['Lithium','Sodium','Potassium','Rubidium','Cesium','Francium']
+    if g:
+        alkali=sorted(alkali)
+    for x in alkali:
+        z = y.format(Name=x, AtomicNumber= num[x], Symbol= symbols[x], AtomicMass= mass[x])
+        f.append(z)
+    print '''<table style="width:70%; border: 1px solid #3a807f;''">
+              <tr>
+                <th>Name</th>
+                <th>Atomic Number</th>
+                <th>Symbol</th>
+                <th>Atomic Mass</th>
+              </tr>'''
+    for i in range(0,len(f)):
+        print f[i]
+        
+def printNoble(g):
+    f = []
+    num = numdict()
+    mass = massdict()
+    symbols = symdict()
+    noble=['Helium','Neon','Argon','Krypton','Xenon','Radon']
+    if g:
+        noble=sorted(noble)
+    for x in noble:
         z = y.format(Name=x, AtomicNumber= num[x], Symbol= symbols[x], AtomicMass= mass[x])
         f.append(z)
     print '''<table style="width:70%; border: 1px solid #3a807f;''">
@@ -166,4 +185,4 @@ def mass():
     fileIn.close()
     return mass
 
-main(True)
+main(False)

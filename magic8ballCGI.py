@@ -19,7 +19,7 @@ def htmlTop():
 
                     <ul>
                 	<div class="table">
-
+                          <li><a href="http://lisa.stuy.edu/~ali02">Home Page</a></li>
                 		  <li><a href="http://lisa.stuy.edu/~ali02/projects/magic8ballCGI.py">Magic 8 Ball</a></li>
                 		  <li><a href="http://lisa.stuy.edu/~ali02/projects/getWord.html">Anagrams</a></li>
                 		  <li class="dropdown">
@@ -52,8 +52,9 @@ def main():
          'Cannot predict now.','Concentrate and ask again.','Do not count on it.',
          'My reply is no.','My sources say no.','Outlook not so good.','Very doubtful.']
     a = random.choice(L)
-    print '''<div id="yeet" style="height: 510px;">
+    print '''<div id="yeet" style="height: 520px;">
                 <center><p> <span style="font-weight:900; font-size:30px;">Magic 8 Ball</span></p>'''
+    print '<p style="width:60%;"> Per Nadine\'s request, I am putting a note here. If you hover over the ball and then click on it, it will wiggle and then give you a new message.'
     print ' <center><a href="http://lisa.stuy.edu/~ali02/projects/magic8ballCGI.py"><img class="oof" src="https://www.horoscope.com/images-US/games/game-magic-8-ball-no-text.png"></a><br/></center>'
     print '<center><p><h3>' + a + '</h3></p></center>'
     print '<center><a href=../index.html>Back to the Home Page</a><br></center>'

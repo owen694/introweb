@@ -20,7 +20,7 @@ def htmlTop():
 
                     <ul>
                 	<div class="table">
-
+                          <li><a href="http://lisa.stuy.edu/~ali02">Home Page</a></li>
                 		  <li><a href="http://lisa.stuy.edu/~ali02/projects/magic8ballCGI.py">Magic 8 Ball</a></li>
                 		  <li><a href="http://lisa.stuy.edu/~ali02/projects/getWord.html">Anagrams</a></li>
                 		  <li class="dropdown">

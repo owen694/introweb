@@ -28,7 +28,7 @@ def htmlTop():
 
                     <ul>
                 	<div class="table">
-
+                          <li><a href="http://lisa.stuy.edu/~ali02">Home Page</a></li>
                 		  <li><a href="http://lisa.stuy.edu/~ali02/projects/magic8ballCGI.py">Magic 8 Ball</a></li>
                 		  <li><a href="http://lisa.stuy.edu/~ali02/projects/getWord.html">Anagrams</a></li>
                 		  <li class="dropdown">
@@ -197,6 +197,8 @@ def selector():
                     <option value="3">Alkali Metals (By Atomic Number)</option>
                     <option value="4">Halogens (Alphabetic)</option>
                     <option value="5">Alkali Metals (Alphabetic)</option>
+                    <option value="6">Noble Gases (By Atomic Number)</option>
+                    <option value="7">Noble Gases (Alphabetic)</option>
                 </select></br>
                 <input type="submit" class="button" name="submit word" value="Submit" /><br />
                 <p>    </p>
@@ -217,6 +219,11 @@ def printTable():
         printHalogens(True)
     if yeet == '5':
         printAlkali(True)
+    if yeet == '6':
+        printNoble(False)
+    if yeet == '7':
+        printNoble(True)
+
 def format(a,b,c,d):
     x = []
     nam = a
@@ -274,6 +281,28 @@ def printAlkali(g):
     for i in range(0,len(f)):
         print f[i]
 
+def printNoble(g):
+    f = []
+    num = numdict()
+    mass = massdict()
+    symbols = symdict()
+    noble=['Helium','Neon','Argon','Krypton','Xenon','Radon']
+    if g:
+        noble=sorted(noble)
+    for x in noble:
+        z = y.format(Name=x, AtomicNumber= num[x], Symbol= symbols[x], AtomicMass= mass[x])
+        f.append(z)
+    print '''<table style="width:70%; border: 1px solid #3a807f;''">
+              <tr>
+                <th>Name</th>
+                <th>Atomic Number</th>
+                <th>Symbol</th>
+                <th>Atomic Mass</th>
+              </tr>'''
+    for i in range(0,len(f)):
+        print f[i]
+
+
 def atom():
     x=format(names(),atomnum(),symbol(),mass())
     print '''<table style="width:70%; border: 1px solid #3a807f;''">
@@ -305,7 +334,8 @@ def alph():
 
 def main():
     htmlTop()
-    print ' <div id="yeet" style="height: 694px; line-height: 30px;"> <center><p> <span style="font-weight:900; font-size:30px;">Periodic Table of Elements</span></p>'
+    print ' <div id="yeet" style="height: 600px; line-height: 30px;"> <center><p> <span style="font-weight:900; font-size:30px;">Periodic Table of Elements</span></p>'
+    print '<center><p style="width:60%"> Per Joseph\'s request, I am putting a note here. Notice that this page is scrollable.</p></center>'
     print '<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Periodic_table_vectorial.png" width=60%>'
     things()
     stats()
